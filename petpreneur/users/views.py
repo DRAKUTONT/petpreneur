@@ -152,7 +152,8 @@ class ProfileRequestsView(django.views.generic.ListView):
         if job_request_id:
             try:
                 job_request = django.shortcuts.get_object_or_404(
-                    self.model, id=job_request_id,
+                    self.model,
+                    id=job_request_id,
                 )
                 job_request.delete()
             except django.http.Http404:
